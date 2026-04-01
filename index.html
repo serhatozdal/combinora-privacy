@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PdfScanUp Privacy Policy</title>
+  <meta
+    name="description"
+    content="Privacy Policy for PdfScanUp, a mobile document scanning and PDF workspace app."
+  />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #13141b;
+      --bg-soft: #171923;
+      --card: #1a1c27;
+      --card-2: #1e2030;
+      --text: #ffffff;
+      --sub: #8b93a8;
+      --muted: #5a6478;
+      --line: rgba(255, 255, 255, 0.08);
+      --line-strong: rgba(255, 255, 255, 0.12);
+      --blue: #4f7ffa;
+      --green: #34d399;
+      --amber: #f59e0b;
+      --danger: #fb7185;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --container: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "DM Sans", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(79, 127, 250, 0.16), transparent 28%),
+        radial-gradient(circle at top right, rgba(52, 211, 153, 0.10), transparent 24%),
+        linear-gradient(180deg, #101118 0%, var(--bg) 26%, #101118 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .shell {
+      width: min(calc(100% - 32px), var(--container));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(16, 17, 24, 0.76);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .topbar-inner {
+      width: min(calc(100% - 32px), var(--container));
+      margin: 0 auto;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-size: 14px;
+      letter-spacing: 0.01em;
+    }
+
+    .brand-copy span {
+      display: block;
+      margin-top: 2px;
+      color: var(--sub);
+      font-size: 12px;
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .lang-switch button {
+      appearance: none;
+      border: 0;
+      cursor: pointer;
+      background: transparent;
+      color: var(--sub);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font: inherit;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .lang-switch button.active {
+      background: var(--text);
+      color: #111827;
+    }
+
+    .hero {
+      padding: 56px 0 28px;
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 34px;
+      background:
+        linear-gradient(135deg, rgba(79, 127, 250, 0.16), transparent 42%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.02)),
+        var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: var(--shadow);
+      padding: 36px;
+    }
+
+    .hero-card::before,
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(12px);
+    }
+
+    .hero-card::before {
+      width: 220px;
+      height: 220px;
+      right: -48px;
+      top: -58px;
+      background: rgba(79, 127, 250, 0.18);
+    }
+
+    .hero-card::after {
+      width: 180px;
+      height: 180px;
+      left: -64px;
+      bottom: -72px;
+      background: rgba(52, 211, 153, 0.10);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      color: var(--sub);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 16px rgba(52, 211, 153, 0.55);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.9fr);
+      gap: 28px;
+      align-items: end;
+      margin-top: 20px;
+    }
+
+    .hero h1 {
+      margin: 16px 0 14px;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      max-width: 12ch;
+    }
+
+    .hero p {
+      margin: 0;
+      color: var(--sub);
+      font-size: 16px;
+      line-height: 1.72;
+      max-width: 58ch;
+    }
+
+    .hero-meta {
+      display: grid;
+      gap: 14px;
+    }
+
+    .mini-card {
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 18px 18px 16px;
+    }
+
+    .mini-card-label {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .mini-card strong {
+      display: block;
+      margin-top: 10px;
+      font-size: 18px;
+      line-height: 1.35;
+    }
+
+    .mini-card p {
+      margin-top: 8px;
+      font-size: 14px;
+      color: var(--sub);
+      line-height: 1.6;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 22px;
+      align-items: start;
+      margin: 22px 0;
+    }
+
+    .nav-card,
+    .content-card {
+      border-radius: var(--radius-xl);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.015));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .nav-card {
+      position: sticky;
+      top: 96px;
+      padding: 22px;
+    }
+
+    .nav-card h2 {
+      margin: 0 0 14px;
+      font-size: 14px;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-card nav {
+      display: grid;
+      gap: 8px;
+    }
+
+    .nav-card a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      border-radius: 14px;
+      padding: 12px 14px;
+      text-decoration: none;
+      color: var(--sub);
+      border: 1px solid transparent;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .nav-card a:hover {
+      border-color: rgba(255, 255, 255, 0.08);
+      color: var(--text);
+    }
+
+    .nav-card small {
+      color: var(--muted);
+      display: block;
+      margin-top: 14px;
+      line-height: 1.55;
+    }
+
+    .content-card {
+      padding: 26px;
+    }
+
+    .content-block + .content-block {
+      margin-top: 18px;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      color: var(--sub);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .section-tag::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--blue);
+      box-shadow: 0 0 18px rgba(79, 127, 250, 0.48);
+    }
+
+    .content-block h3 {
+      margin: 0;
+      font-size: clamp(24px, 3vw, 32px);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .content-block p {
+      margin: 12px 0 0;
+      color: var(--sub);
+      font-size: 15px;
+      line-height: 1.78;
+    }
+
+    .policy-list {
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .policy-list li {
+      position: relative;
+      padding: 14px 16px 14px 46px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      color: var(--sub);
+      line-height: 1.65;
+    }
+
+    .policy-list li::before {
+      content: "";
+      position: absolute;
+      left: 16px;
+      top: 18px;
+      width: 16px;
+      height: 16px;
+      border-radius: 6px;
+      background: linear-gradient(180deg, rgba(79, 127, 250, 0.30), rgba(79, 127, 250, 0.12));
+      border: 1px solid rgba(79, 127, 250, 0.35);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.10);
+    }
+
+    .policy-list strong {
+      color: var(--text);
+    }
+
+    .notice-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .notice {
+      border-radius: 20px;
+      padding: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .notice.blue {
+      background: linear-gradient(180deg, rgba(79, 127, 250, 0.14), rgba(79, 127, 250, 0.05));
+    }
+
+    .notice.green {
+      background: linear-gradient(180deg, rgba(52, 211, 153, 0.13), rgba(52, 211, 153, 0.05));
+    }
+
+    .notice.amber {
+      background: linear-gradient(180deg, rgba(245, 158, 11, 0.16), rgba(245, 158, 11, 0.05));
+    }
+
+    .notice span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .notice strong {
+      display: block;
+      margin-top: 10px;
+      font-size: 16px;
+      line-height: 1.45;
+    }
+
+    .divider {
+      height: 1px;
+      margin: 28px 0;
+      background: linear-gradient(90deg, transparent, var(--line-strong), transparent);
+    }
+
+    .footer {
+      padding: 8px 0 56px;
+    }
+
+    .footer-card {
+      border-radius: 30px;
+      padding: 24px 26px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.015));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-card p {
+      margin: 8px 0 0;
+      color: var(--sub);
+      line-height: 1.65;
+    }
+
+    .footer-card a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 14px;
+      text-decoration: none;
+      color: var(--text);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      background: rgba(255, 255, 255, 0.04);
+      font-weight: 700;
+    }
+
+    [data-lang-content] {
+      display: none;
+    }
+
+    [data-lang-content].active {
+      display: block;
+    }
+
+    @media (max-width: 940px) {
+      .hero-grid,
+      .section-grid,
+      .notice-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-card {
+        position: static;
+      }
+
+      .hero-card,
+      .content-card,
+      .nav-card {
+        padding: 22px;
+      }
+
+      .topbar-inner {
+        min-height: 64px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .shell,
+      .topbar-inner {
+        width: min(calc(100% - 20px), var(--container));
+      }
+
+      .hero {
+        padding-top: 26px;
+      }
+
+      .hero h1 {
+        max-width: 100%;
+      }
+
+      .lang-switch button {
+        padding-inline: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#top" aria-label="PdfScanUp Privacy Policy">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="m561.05 38.74c172.2-0.1 259.93 0.16 265.05 0.78 4.21 0.51 10.08 1.37 13.05 1.92 2.97 0.54 9.25 1.99 13.95 3.21 4.7 1.23 13.61 4.42 19.8 7.1 6.19 2.68 13.28 6.12 15.75 7.65 2.48 1.53 7.71 5.07 11.62 7.86 3.92 2.8 11.01 8.94 15.75 13.64 4.75 4.71 10.55 11.09 12.91 14.18 2.35 3.09 6.05 8.56 8.23 12.15 2.18 3.58 5.56 10.17 7.52 14.62 1.95 4.46 4.21 10.13 5 12.6 0.8 2.48 2.23 7.54 3.19 11.25 0.95 3.71 1.98 8.17 2.29 9.9 0.3 1.73 0.99 6.59 1.52 10.8 0.65 5.2 1.09 84.14 1.35 246.6 0.29 172.09 0.11 241.72-0.61 248.85-0.55 5.45-2.42 15.77-4.16 22.95-1.73 7.18-4.87 17.51-6.98 22.95-2.11 5.45-5.76 13.75-8.12 18.45-2.35 4.7-6.12 11.59-8.36 15.3-2.24 3.71-7.25 11.41-11.13 17.1-3.88 5.69-8.66 12.58-10.63 15.3-1.98 2.72-5.73 7.65-8.34 10.94-2.61 3.3-7.78 9.57-11.48 13.95-3.7 4.38-10.57 12.21-15.27 17.41-4.69 5.2-15.29 16.54-23.54 25.2-8.25 8.66-21.43 21.66-29.28 28.87-7.85 7.22-17.73 16.13-21.94 19.8-4.21 3.68-9.88 8.54-12.6 10.81-2.72 2.28-8.18 6.77-12.14 9.99-3.96 3.22-9.02 7.14-11.25 8.72-2.23 1.58-9.31 6.44-15.75 10.8-6.43 4.36-14.74 9.77-18.45 12.01-3.71 2.24-11 6.21-16.2 8.81-5.2 2.6-15.12 7.15-22.05 10.1-6.93 2.95-17.26 6.92-22.95 8.82-5.69 1.9-14.2 4.46-18.9 5.68-4.7 1.23-12.6 3.05-17.55 4.04-4.95 0.99-12.24 2.23-16.2 2.76-3.96 0.52-10.64 1.36-14.85 1.87-5.01 0.6-74.92 0.92-202.5 0.91-161.59 0-196.46-0.22-204.3-1.26-5.2-0.69-12.49-1.94-16.2-2.77-3.71-0.83-10.8-2.95-15.75-4.71-4.95-1.75-12.64-5.01-17.1-7.24-4.46-2.23-11.14-6.1-14.85-8.59-3.71-2.5-9.79-7.17-13.5-10.39-3.71-3.22-9.55-8.92-12.97-12.67-3.42-3.74-9.03-11.06-12.47-16.26-3.43-5.2-7.99-13.1-10.12-17.55-2.13-4.46-4.9-11.54-6.16-15.75-1.25-4.21-2.94-10.89-3.74-14.85-0.8-3.96-1.83-11.66-2.29-17.1-0.47-5.73-0.8-124.01-0.78-280.8 0.02-154.69 0.39-276.5 0.87-283.95 0.45-7.18 1.17-16.09 1.6-19.8 0.42-3.71 1.24-7.66 1.81-8.78 0.6-1.15 2.5-2.43 4.43-2.98 2.07-0.6 10.56-0.86 22.01-0.68 16.47 0.26 18.84 0.48 20.25 1.9 1.54 1.53 1.61 14.8 1.71 296.1 0.1 273.77 0.21 295 1.64 301.69 0.84 3.96 2.35 9.63 3.35 12.6 1 2.97 3.6 8.84 5.79 13.05 2.18 4.21 6.08 10.28 8.66 13.5 2.58 3.22 7.37 8.28 10.64 11.25 3.26 2.97 9.76 7.53 14.43 10.12 4.67 2.6 11.12 5.5 14.34 6.44 3.22 0.95 8.48 2.16 11.7 2.69 3.22 0.53 10.1 1.38 15.3 1.88 6.07 0.59 80.61 0.91 208.35 0.91 127.71 0 204.86-0.34 215.55-0.95 9.16-0.52 18.17-1.33 20.03-1.79 2.91-0.73 3.72-1.56 5.94-6.02 1.42-2.85 3.8-9.03 5.3-13.73 1.5-4.7 3.17-10.78 3.71-13.5 0.54-2.72 1.38-7.78 1.85-11.25 0.48-3.46 1.28-10.15 1.79-14.85 0.5-4.7 1.16-17.06 1.45-27.45 0.3-10.39 0.71-25.18 0.92-32.85 0.21-7.67 0.85-17.39 1.41-21.6 0.57-4.21 1.8-10.59 2.72-14.17 0.92-3.59 3.22-9.87 5.11-13.95 1.89-4.09 5.48-10.47 7.98-14.18 2.5-3.71 6.53-8.94 8.94-11.62 2.42-2.68 7.24-7.13 10.7-9.89 3.47-2.75 8.53-6.15 11.25-7.56 2.72-1.4 7.38-3.55 10.35-4.78 2.97-1.22 8.44-3.04 12.15-4.04 3.71-1 11-2.4 16.2-3.11 5.64-0.77 17.06-1.29 28.35-1.3 10.4-0.01 25.79-0.42 34.2-0.91 8.42-0.48 19.96-1.3 25.65-1.81 5.69-0.5 13.39-1.34 17.1-1.86 3.71-0.51 10.19-1.57 14.4-2.35 4.21-0.78 11.5-2.53 16.2-3.9 4.7-1.36 9.66-2.93 13.5-4.47l-0.02-258.07c-0.01-218.41-0.21-259.19-1.29-265.28-0.7-3.96-2.29-10.03-3.53-13.5-1.25-3.46-3.81-9.13-5.7-12.6-1.89-3.47-6.06-9.51-9.27-13.43-3.21-3.93-8.88-9.59-12.59-12.59-3.71-3-9.99-7.22-13.95-9.39-3.96-2.17-10.84-5.16-15.3-6.65-4.45-1.48-11.95-3.24-16.65-3.91-7.03-1.01-54.35-1.23-266.4-1.24-220.76-0.01-259.79 0.17-271.35 1.31-7.42 0.73-16.54 1.72-20.25 2.2-3.71 0.47-8.77 1.29-11.25 1.81-2.47 0.53-5.71 1.2-7.2 1.5-1.48 0.3-6.34 1.49-10.8 2.65-4.45 1.15-11.74 3.38-16.2 4.95-4.45 1.57-12.15 4.6-17.1 6.73-4.95 2.13-13.25 6.17-18.45 8.97-5.2 2.8-14.68 8.6-21.08 12.89-6.4 4.29-12.88 8.71-14.4 9.82-1.52 1.11-4.79 3.64-7.27 5.63-2.47 1.98-6.73 5.3-9.45 7.37-2.72 2.07-10.62 9.48-17.55 16.46-6.93 6.98-14.83 15.4-17.55 18.72-2.72 3.32-5.05 5.84-5.17 5.6-0.13-0.25 0.38-1.67 1.12-3.15 0.74-1.49 1.26-3 1.14-3.38-0.11-0.37 1.17-4.11 2.85-8.32 1.68-4.21 5.06-11.7 7.51-16.65 2.44-4.95 5.89-11.43 7.65-14.4 1.76-2.97 6.68-10.05 10.93-15.73 4.25-5.69 12.22-15.2 17.73-21.15 5.5-5.95 13.8-14.14 18.45-18.19 4.64-4.05 11.48-9.68 15.19-12.51 3.71-2.83 10.19-7.39 14.4-10.12 4.21-2.73 13.32-7.72 20.25-11.07 6.93-3.36 17.87-7.91 24.3-10.12 6.44-2.21 15.55-5.01 20.25-6.22 4.7-1.22 11.18-2.68 14.4-3.27 3.22-0.58 7.88-1.42 10.35-1.87 2.48-0.46 8.15-1.18 12.6-1.62 4.46-0.44 123.93-0.86 265.5-0.94z"/>
+          </svg>
+        </span>
+        <span class="brand-copy">
+          <strong>PdfScanUp</strong>
+          <span>Privacy Policy</span>
+        </span>
+      </a>
+
+      <div class="lang-switch" aria-label="Language switch">
+        <button class="active" type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="tr">TR</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top" class="shell">
+    <section class="hero">
+      <div class="hero-card">
+        <span class="eyebrow">
+          <span class="eyebrow-dot" aria-hidden="true"></span>
+          <span data-lang-label="hero_eyebrow">Document privacy, clearly explained</span>
+        </span>
+
+        <div class="hero-grid">
+          <div>
+            <h1 data-lang-label="hero_title">Your documents stay under your control.</h1>
+            <p data-lang-label="hero_text">
+              This Privacy Policy explains how PdfScanUp handles scanned documents, imported files,
+              local preferences, optional advertising features, and analytics services that may be
+              enabled as the product evolves.
+            </p>
+          </div>
+
+          <div class="hero-meta">
+            <div class="mini-card">
+              <span class="mini-card-label" data-lang-label="last_updated_label">Last Updated</span>
+              <strong>April 1, 2026</strong>
+              <p data-lang-label="last_updated_text">
+                This page should be updated whenever data practices, SDKs, or app features materially change.
+              </p>
+            </div>
+            <div class="mini-card">
+              <span class="mini-card-label" data-lang-label="scope_label">Scope</span>
+              <strong data-lang-label="scope_title">PdfScanUp mobile application and related privacy disclosures</strong>
+              <p data-lang-label="scope_text">
+                This policy covers on-device scanning, PDF import/export, optional ads, optional analytics,
+                and user support communications.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-grid">
+      <aside class="nav-card">
+        <h2 data-lang-label="quick_nav">Quick Navigation</h2>
+        <nav>
+          <a href="#information"><span data-lang-label="nav_information">Information We Handle</span><span>01</span></a>
+          <a href="#use"><span data-lang-label="nav_use">How We Use Information</span><span>02</span></a>
+          <a href="#storage"><span data-lang-label="nav_storage">Storage and Security</span><span>03</span></a>
+          <a href="#ads"><span data-lang-label="nav_ads">Ads and Analytics</span><span>04</span></a>
+          <a href="#sharing"><span data-lang-label="nav_sharing">Sharing and Third Parties</span><span>05</span></a>
+          <a href="#rights"><span data-lang-label="nav_rights">Your Choices and Rights</span><span>06</span></a>
+          <a href="#children"><span data-lang-label="nav_children">Children's Privacy</span><span>07</span></a>
+          <a href="#contact"><span data-lang-label="nav_contact">Contact</span><span>08</span></a>
+        </nav>
+        <small data-lang-label="nav_note">
+          If new monetization or analytics tools are enabled in the app, this policy should be revised before release.
+        </small>
+      </aside>
+
+      <div class="content-card">
+        <section id="information" class="content-block">
+          <span class="section-tag" data-lang-label="tag_information">Information We Handle</span>
+          <h3 data-lang-label="title_information">What data PdfScanUp may access or store</h3>
+          <p data-lang-label="text_information">
+            PdfScanUp is built around scanning, importing, organizing, editing, and exporting documents.
+            To support those features, the app may process files and certain device-level data you choose to provide.
+          </p>
+          <ul class="policy-list" data-lang-content="en active">
+            <li><strong>Camera access.</strong> If you use scan features, the app may request camera permission to capture document images.</li>
+            <li><strong>Imported files.</strong> If you import images or PDF files, the app may read the files you explicitly select or share into the app.</li>
+            <li><strong>Documents and signatures stored on device.</strong> Scanned pages, imported pages, edited files, exported PDFs, and saved signatures may be stored locally on your device.</li>
+            <li><strong>Workspace metadata.</strong> The app may store document names, page order, favorites, lock status, language preference, theme preference, export quality preference, and similar local settings.</li>
+            <li><strong>Purchase or monetization state.</strong> If paid features, rewarded ads, or ad-removal options are enabled, the app may store entitlement or reward-related state.</li>
+            <li><strong>Analytics and diagnostics.</strong> If Firebase Analytics or similar tools are enabled, the app may collect event, usage, device, and interaction data to measure feature usage and improve performance.</li>
+          </ul>
+          <ul class="policy-list" data-lang-content="tr">
+            <li><strong>Kamera erişimi.</strong> Tarama özelliklerini kullanırsanız uygulama belge görüntüsü almak için kamera izni isteyebilir.</li>
+            <li><strong>İçe aktarılan dosyalar.</strong> Görsel veya PDF içe aktarırsanız uygulama yalnızca sizin açıkça seçtiğiniz ya da uygulamaya paylaştığınız dosyaları okuyabilir.</li>
+            <li><strong>Cihazda saklanan belgeler ve imzalar.</strong> Taranan sayfalar, içe aktarılan sayfalar, düzenlenen dosyalar, dışa aktarılan PDF'ler ve kaydedilen imzalar cihaz üzerinde yerel olarak saklanabilir.</li>
+            <li><strong>Çalışma alanı metadatası.</strong> Belge adları, sayfa sırası, favoriler, kilit durumu, dil tercihi, tema tercihi, dışa aktarma kalite tercihi ve benzeri yerel ayarlar saklanabilir.</li>
+            <li><strong>Satın alma veya gelir modeli durumu.</strong> Ücretli özellikler, ödüllü reklamlar veya reklam kaldırma seçenekleri etkinleştirilirse uygulama hak sahipliği ya da ödül durumunu saklayabilir.</li>
+            <li><strong>Analitik ve teşhis verileri.</strong> Firebase Analytics veya benzeri araçlar etkinleştirilirse, özellik kullanımını ölçmek ve performansı iyileştirmek için etkinlik, kullanım, cihaz ve etkileşim verileri toplanabilir.</li>
+          </ul>
+        </section>
+
+        <div class="divider"></div>
+
+        <section id="use" class="content-block">
+          <span class="section-tag" data-lang-label="tag_use">How We Use Information</span>
+          <h3 data-lang-label="title_use">Why this information is used</h3>
+          <p data-lang-label="text_use">
+            The app uses data only to operate document workflows, preserve your settings, support optional monetization,
+            and improve the product where analytics is enabled.
+          </p>
+          <ul class="policy-list" data-lang-content="en active">
+            <li>To scan documents, import files, edit pages, create PDFs, and share exported files.</li>
+            <li>To organize workspaces, preserve document order, favorites, locks, and application preferences.</li>
+            <li>To support optional rewarded ads, ad-related controls, or future premium entitlements.</li>
+            <li>To understand crashes, performance issues, and aggregated feature usage if analytics or diagnostics services are enabled.</li>
+            <li>To comply with legal obligations, enforce app policies, and respond to user support requests.</li>
+          </ul>
+          <ul class="policy-list" data-lang-content="tr">
+            <li>Belgeleri taramak, dosya içe aktarmak, sayfaları düzenlemek, PDF oluşturmak ve dışa aktarılan dosyaları paylaşmak için.</li>
+            <li>Çalışma alanlarını düzenlemek, belge sırasını, favorileri, kilitleri ve uygulama tercihlerini korumak için.</li>
+            <li>İsteğe bağlı ödüllü reklamları, reklam kontrollerini veya gelecekteki premium hakları desteklemek için.</li>
+            <li>Analitik veya teşhis servisleri etkinleştirilirse çökme, performans sorunları ve toplu özellik kullanımını anlamak için.</li>
+            <li>Yasal yükümlülüklere uymak, uygulama politikalarını uygulamak ve kullanıcı destek taleplerine yanıt vermek için.</li>
+          </ul>
+        </section>
+
+        <div class="divider"></div>
+
+        <section id="storage" class="content-block">
+          <span class="section-tag" data-lang-label="tag_storage">Storage and Security</span>
+          <h3 data-lang-label="title_storage">Where information is kept</h3>
+          <p data-lang-label="text_storage">
+            PdfScanUp is designed primarily around on-device document handling. Local app storage may contain your scans,
+            imported documents, generated files, and certain preference records.
+          </p>
+          <div class="notice-grid">
+            <article class="notice blue">
+              <span data-lang-label="notice_local_label">Local Files</span>
+              <strong data-lang-label="notice_local_text">Scans, imported pages, signatures, and generated PDFs may be stored on your device.</strong>
+            </article>
+            <article class="notice green">
+              <span data-lang-label="notice_choice_label">User Choice</span>
+              <strong data-lang-label="notice_choice_text">Most content handling happens only after you scan, select, import, export, or share a file.</strong>
+            </article>
+            <article class="notice amber">
+              <span data-lang-label="notice_future_label">Future Services</span>
+              <strong data-lang-label="notice_future_text">If analytics, ads, or cloud-connected services are enabled, related data may also be sent to those providers.</strong>
+            </article>
+          </div>
+          <ul class="policy-list" data-lang-content="en active">
+            <li><strong>Security measures.</strong> We may use reasonable technical and organizational safeguards, but no storage or transmission method is completely secure.</li>
+            <li><strong>Retention.</strong> Local files and settings may remain on your device until you delete them, uninstall the app, or clear app data, unless a shorter retention period is required by law or product design.</li>
+            <li><strong>Locked content.</strong> If document lock features are used, the app may store lock-related values locally to enforce access control in the app.</li>
+          </ul>
+          <ul class="policy-list" data-lang-content="tr">
+            <li><strong>Güvenlik önlemleri.</strong> Makul teknik ve idari önlemler uygulanabilir; ancak hiçbir depolama veya iletim yöntemi tamamen güvenli değildir.</li>
+            <li><strong>Saklama süresi.</strong> Yerel dosyalar ve ayarlar, siz silene kadar, uygulamayı kaldırana kadar veya uygulama verisini temizleyene kadar cihazınızda kalabilir; yasal zorunluluk veya ürün tasarımı farklı bir süre gerektirmedikçe.</li>
+            <li><strong>Kilitli içerik.</strong> Belge kilitleme özellikleri kullanılırsa uygulama erişim kontrolünü sağlamak için kilitle ilgili değerleri yerel olarak saklayabilir.</li>
+          </ul>
+        </section>
+
+        <div class="divider"></div>
+
+        <section id="ads" class="content-block">
+          <span class="section-tag" data-lang-label="tag_ads">Ads and Analytics</span>
+          <h3 data-lang-label="title_ads">Advertising SDKs and analytics services</h3>
+          <p data-lang-label="text_ads">
+            The product roadmap may include rewarded advertising and Firebase Analytics. If these services are enabled
+            in a released version of PdfScanUp, they may collect or receive information according to their own technologies
+            and policies.
+          </p>
+          <ul class="policy-list" data-lang-content="en active">
+            <li><strong>Rewarded ads.</strong> If rewarded advertising is enabled, ad networks may collect device identifiers, app interaction data, diagnostic data, approximate location derived from IP, and ad performance information to serve, measure, or limit ads.</li>
+            <li><strong>No fixed promise on ad formats.</strong> Ad placements, including rewarded formats and any future monetization surfaces, may change over time as features evolve.</li>
+            <li><strong>Firebase Analytics.</strong> If Firebase Analytics is enabled, Google may collect event data, device information, app version, session activity, approximate geolocation, and engagement metrics.</li>
+            <li><strong>Provider policies.</strong> Third-party providers such as Google AdMob, Google Firebase, or Google Play services may process data under their own privacy terms in addition to this policy.</li>
+            <li><strong>Updates.</strong> If ad technology, consent flows, or analytics scope materially changes, this policy should be updated before those changes are released.</li>
+          </ul>
+          <ul class="policy-list" data-lang-content="tr">
+            <li><strong>Ödüllü reklamlar.</strong> Ödüllü reklamlar etkinleştirilirse reklam ağları; reklam sunmak, ölçmek veya sınırlamak için cihaz tanımlayıcıları, uygulama etkileşim verileri, teşhis verileri, IP'den türetilen yaklaşık konum ve reklam performans bilgilerini toplayabilir.</li>
+            <li><strong>Reklam formatı konusunda sabit taahhüt yoktur.</strong> Ödüllü reklamlar ve gelecekteki gelir modeli alanları, ürün geliştikçe zaman içinde değişebilir.</li>
+            <li><strong>Firebase Analytics.</strong> Firebase Analytics etkinleştirilirse Google; etkinlik verileri, cihaz bilgileri, uygulama sürümü, oturum etkinliği, yaklaşık konum ve etkileşim metriklerini toplayabilir.</li>
+            <li><strong>Sağlayıcı politikaları.</strong> Google AdMob, Google Firebase veya Google Play servisleri gibi üçüncü taraf sağlayıcılar verileri bu politikaya ek olarak kendi gizlilik şartları kapsamında işleyebilir.</li>
+            <li><strong>Güncellemeler.</strong> Reklam teknolojisi, rıza akışları veya analitik kapsamı önemli ölçüde değişirse, bu politika ilgili değişiklikler yayınlanmadan önce güncellenmelidir.</li>
+          </ul>
+        </section>
+
+        <div class="divider"></div>
+
+        <section id="sharing" class="content-block">
+          <span class="section-tag" data-lang-label="tag_sharing">Sharing and Third Parties</span>
+          <h3 data-lang-label="title_sharing">When information may be shared</h3>
+          <p data-lang-label="text_sharing">
+            PdfScanUp does not need to publicly expose your files to operate core document features. However,
+            information may be shared in limited scenarios that you initiate or that are required by enabled services.
+          </p>
+          <ul class="policy-list" data-lang-content="en active">
+            <li><strong>User-initiated sharing.</strong> If you export or share a PDF or image, the selected file may be transferred to another app or service you choose.</li>
+            <li><strong>Service providers.</strong> If ads, analytics, crash reporting, billing, or infrastructure services are enabled, those providers may receive relevant technical or event data.</li>
+            <li><strong>Legal reasons.</strong> Information may be disclosed if required by law, regulation, legal process, or to protect rights, safety, and security.</li>
+            <li><strong>Business transfers.</strong> If the product or developer operations are transferred, merged, or reorganized, relevant information may be transferred as part of that process, subject to applicable law.</li>
+          </ul>
+          <ul class="policy-list" data-lang-content="tr">
+            <li><strong>Kullanıcının başlattığı paylaşım.</strong> Bir PDF veya görseli dışa aktarır ya da paylaşırsanız seçilen dosya sizin tercih ettiğiniz başka bir uygulama ya da servise aktarılabilir.</li>
+            <li><strong>Hizmet sağlayıcılar.</strong> Reklam, analitik, çökme raporlama, ödeme veya altyapı servisleri etkinleştirilirse ilgili teknik ya da etkinlik verileri bu sağlayıcılara iletilebilir.</li>
+            <li><strong>Yasal nedenler.</strong> Yasa, düzenleme, hukuki süreç gerektirirse veya hakları, güvenliği ve emniyeti korumak için bilgi açıklanabilir.</li>
+            <li><strong>İş devri.</strong> Ürün veya geliştirici operasyonları devredilir, birleşir veya yeniden yapılandırılırsa ilgili bilgiler yürürlükteki hukuka tabi olarak bu sürecin bir parçası olarak aktarılabilir.</li>
+          </ul>
+        </section>
+
+        <div class="divider"></div>
+
+        <section id="rights" class="content-block">
+          <span class="section-tag" data-lang-label="tag_rights">Your Choices and Rights</span>
+          <h3 data-lang-label="title_rights">How you can manage your information</h3>
+          <p data-lang-label="text_rights">
+            You can usually control your content directly from your device and app settings.
+            Depending on your jurisdiction, you may also have statutory privacy rights.
+          </p>
+          <ul class="policy-list" data-lang-content="en active">
+            <li>You can stop using camera or file import features by declining permissions or not selecting files.</li>
+            <li>You can delete documents, signatures, generated files, or app data from your device.</li>
+            <li>You can uninstall the app to remove locally stored app data, subject to any residual files or system backups managed by your device.</li>
+            <li>If analytics or ad consent flows are implemented, additional in-app controls or consent options may be provided.</li>
+            <li>If you contact us, you may request access, correction, deletion, or information about your data, subject to applicable law and technical feasibility.</li>
+          </ul>
+          <ul class="policy-list" data-lang-content="tr">
+            <li>İzin vermeyerek veya dosya seçmeyerek kamera ve dosya içe aktarma özelliklerini kullanmayabilirsiniz.</li>
+            <li>Belgeleri, imzaları, oluşturulan dosyaları veya uygulama verilerini cihazınızdan silebilirsiniz.</li>
+            <li>Cihazınızın yönettiği artık dosyalar veya sistem yedekleri hariç olmak üzere yerel uygulama verilerini kaldırmak için uygulamayı silebilirsiniz.</li>
+            <li>Analitik veya reklam rızası akışları uygulanırsa ek uygulama içi kontroller veya rıza seçenekleri sunulabilir.</li>
+            <li>Bizimle iletişime geçerseniz, yürürlükteki hukuka ve teknik uygulanabilirliğe tabi olarak verilerinize erişim, düzeltme, silme veya bilgi talebinde bulunabilirsiniz.</li>
+          </ul>
+        </section>
+
+        <div class="divider"></div>
+
+        <section id="children" class="content-block">
+          <span class="section-tag" data-lang-label="tag_children">Children's Privacy</span>
+          <h3 data-lang-label="title_children">Age-related notice</h3>
+          <p data-lang-label="text_children">
+            PdfScanUp is not intended for children under the age that requires parental consent under applicable law.
+            If you believe a child has provided personal information through enabled third-party services, contact us so we can review the situation.
+          </p>
+        </section>
+
+        <div class="divider"></div>
+
+        <section id="contact" class="content-block">
+          <span class="section-tag" data-lang-label="tag_contact">Contact</span>
+          <h3 data-lang-label="title_contact">How to reach us</h3>
+          <p data-lang-label="text_contact">
+            If you have questions about this Privacy Policy or data handling practices, contact the developer using the email address below.
+            Replace the placeholder before publishing this page.
+          </p>
+          <ul class="policy-list" data-lang-content="en active">
+            <li><strong>Developer:</strong> PdfScanUp</li>
+            <li><strong>Email:</strong> your-email@example.com</li>
+            <li><strong>Policy updates:</strong> We may update this page from time to time. The latest revision date will appear at the top of this policy.</li>
+          </ul>
+          <ul class="policy-list" data-lang-content="tr">
+            <li><strong>Geliştirici:</strong> PdfScanUp</li>
+            <li><strong>E-posta:</strong> your-email@example.com</li>
+            <li><strong>Politika güncellemeleri:</strong> Bu sayfa zaman zaman güncellenebilir. En güncel revizyon tarihi politikanın üst kısmında yer alır.</li>
+          </ul>
+        </section>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-card">
+        <div>
+          <strong data-lang-label="footer_title">Publish this page as your public privacy policy URL.</strong>
+          <p data-lang-label="footer_text">
+            After publishing with GitHub Pages, place the final URL in Google Play Console and optionally link to it from your in-app settings screen.
+          </p>
+        </div>
+        <a href="https://pages.github.com/" target="_blank" rel="noreferrer" data-lang-label="footer_button">Open GitHub Pages</a>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    const translations = {
+      en: {
+        hero_eyebrow: "Document privacy, clearly explained",
+        hero_title: "Your documents stay under your control.",
+        hero_text: "This Privacy Policy explains how PdfScanUp handles scanned documents, imported files, local preferences, optional advertising features, and analytics services that may be enabled as the product evolves.",
+        last_updated_label: "Last Updated",
+        last_updated_text: "This page should be updated whenever data practices, SDKs, or app features materially change.",
+        scope_label: "Scope",
+        scope_title: "PdfScanUp mobile application and related privacy disclosures",
+        scope_text: "This policy covers on-device scanning, PDF import/export, optional ads, optional analytics, and user support communications.",
+        quick_nav: "Quick Navigation",
+        nav_information: "Information We Handle",
+        nav_use: "How We Use Information",
+        nav_storage: "Storage and Security",
+        nav_ads: "Ads and Analytics",
+        nav_sharing: "Sharing and Third Parties",
+        nav_rights: "Your Choices and Rights",
+        nav_children: "Children's Privacy",
+        nav_contact: "Contact",
+        nav_note: "If new monetization or analytics tools are enabled in the app, this policy should be revised before release.",
+        tag_information: "Information We Handle",
+        title_information: "What data PdfScanUp may access or store",
+        text_information: "PdfScanUp is built around scanning, importing, organizing, editing, and exporting documents. To support those features, the app may process files and certain device-level data you choose to provide.",
+        tag_use: "How We Use Information",
+        title_use: "Why this information is used",
+        text_use: "The app uses data only to operate document workflows, preserve your settings, support optional monetization, and improve the product where analytics is enabled.",
+        tag_storage: "Storage and Security",
+        title_storage: "Where information is kept",
+        text_storage: "PdfScanUp is designed primarily around on-device document handling. Local app storage may contain your scans, imported documents, generated files, and certain preference records.",
+        notice_local_label: "Local Files",
+        notice_local_text: "Scans, imported pages, signatures, and generated PDFs may be stored on your device.",
+        notice_choice_label: "User Choice",
+        notice_choice_text: "Most content handling happens only after you scan, select, import, export, or share a file.",
+        notice_future_label: "Future Services",
+        notice_future_text: "If analytics, ads, or cloud-connected services are enabled, related data may also be sent to those providers.",
+        tag_ads: "Ads and Analytics",
+        title_ads: "Advertising SDKs and analytics services",
+        text_ads: "The product roadmap may include rewarded advertising and Firebase Analytics. If these services are enabled in a released version of PdfScanUp, they may collect or receive information according to their own technologies and policies.",
+        tag_sharing: "Sharing and Third Parties",
+        title_sharing: "When information may be shared",
+        text_sharing: "PdfScanUp does not need to publicly expose your files to operate core document features. However, information may be shared in limited scenarios that you initiate or that are required by enabled services.",
+        tag_rights: "Your Choices and Rights",
+        title_rights: "How you can manage your information",
+        text_rights: "You can usually control your content directly from your device and app settings. Depending on your jurisdiction, you may also have statutory privacy rights.",
+        tag_children: "Children's Privacy",
+        title_children: "Age-related notice",
+        text_children: "PdfScanUp is not intended for children under the age that requires parental consent under applicable law. If you believe a child has provided personal information through enabled third-party services, contact us so we can review the situation.",
+        tag_contact: "Contact",
+        title_contact: "How to reach us",
+        text_contact: "If you have questions about this Privacy Policy or data handling practices, contact the developer using the email address below. Replace the placeholder before publishing this page.",
+        footer_title: "Publish this page as your public privacy policy URL.",
+        footer_text: "After publishing with GitHub Pages, place the final URL in Google Play Console and optionally link to it from your in-app settings screen.",
+        footer_button: "Open GitHub Pages"
+      },
+      tr: {
+        hero_eyebrow: "Belge gizliliği, açık şekilde",
+        hero_title: "Belgeleriniz sizin kontrolünüzde kalır.",
+        hero_text: "Bu Gizlilik Politikası, PdfScanUp'ın taranan belgeleri, içe aktarılan dosyaları, yerel tercihleri, isteğe bağlı reklam özelliklerini ve ürün geliştikçe etkinleştirilebilecek analitik servislerini nasıl ele aldığını açıklar.",
+        last_updated_label: "Son Güncelleme",
+        last_updated_text: "Veri işleme yöntemleri, SDK'lar veya uygulama özellikleri önemli ölçüde değiştiğinde bu sayfa güncellenmelidir.",
+        scope_label: "Kapsam",
+        scope_title: "PdfScanUp mobil uygulaması ve ilgili gizlilik açıklamaları",
+        scope_text: "Bu politika cihaz içi tarama, PDF içe/dışa aktarma, isteğe bağlı reklamlar, isteğe bağlı analitik ve kullanıcı destek iletişimlerini kapsar.",
+        quick_nav: "Hızlı Gezinme",
+        nav_information: "İşlenen Bilgiler",
+        nav_use: "Bilgiler Nasıl Kullanılır",
+        nav_storage: "Saklama ve Güvenlik",
+        nav_ads: "Reklamlar ve Analitik",
+        nav_sharing: "Paylaşım ve Üçüncü Taraflar",
+        nav_rights: "Tercihleriniz ve Haklarınız",
+        nav_children: "Çocukların Gizliliği",
+        nav_contact: "İletişim",
+        nav_note: "Uygulamada yeni gelir modeli veya analitik araçları etkinleştirilirse bu politika yayın öncesinde revize edilmelidir.",
+        tag_information: "İşlenen Bilgiler",
+        title_information: "PdfScanUp hangi verilere erişebilir veya hangi verileri saklayabilir",
+        text_information: "PdfScanUp; belge tarama, içe aktarma, düzenleme, organize etme ve dışa aktarma akışları etrafında tasarlanmıştır. Bu özellikleri desteklemek için uygulama, sizin sağlamayı seçtiğiniz dosyaları ve bazı cihaz düzeyi verileri işleyebilir.",
+        tag_use: "Bilgiler Nasıl Kullanılır",
+        title_use: "Bu bilgiler neden kullanılır",
+        text_use: "Uygulama verileri yalnızca belge akışlarını çalıştırmak, ayarlarınızı korumak, isteğe bağlı gelir modelini desteklemek ve analitik etkinse ürünü iyileştirmek için kullanır.",
+        tag_storage: "Saklama ve Güvenlik",
+        title_storage: "Bilgiler nerede tutulur",
+        text_storage: "PdfScanUp temel olarak cihaz içi belge işleme mantığıyla tasarlanmıştır. Yerel uygulama depolaması taramalarınızı, içe aktarılan belgeleri, oluşturulan dosyaları ve bazı tercih kayıtlarını içerebilir.",
+        notice_local_label: "Yerel Dosyalar",
+        notice_local_text: "Taramalar, içe aktarılan sayfalar, imzalar ve oluşturulan PDF'ler cihazınızda saklanabilir.",
+        notice_choice_label: "Kullanıcı Tercihi",
+        notice_choice_text: "İçerik işleme çoğunlukla ancak siz bir dosyayı taradığınızda, seçtiğinizde, içe aktardığınızda, dışa aktardığınızda veya paylaştığınızda gerçekleşir.",
+        notice_future_label: "Gelecek Servisler",
+        notice_future_text: "Analitik, reklam veya bulut bağlantılı servisler etkinleştirilirse ilgili veriler bu sağlayıcılara da gönderilebilir.",
+        tag_ads: "Reklamlar ve Analitik",
+        title_ads: "Reklam SDK'ları ve analitik servisleri",
+        text_ads: "Ürün yol haritası ödüllü reklamları ve Firebase Analytics'i içerebilir. Bu servisler PdfScanUp'ın yayınlanan bir sürümünde etkinleştirilirse kendi teknolojileri ve politikaları çerçevesinde veri toplayabilir veya alabilir.",
+        tag_sharing: "Paylaşım ve Üçüncü Taraflar",
+        title_sharing: "Bilgiler ne zaman paylaşılabilir",
+        text_sharing: "PdfScanUp'ın temel belge özelliklerini çalıştırmak için dosyalarınızı herkese açık hale getirmesi gerekmez. Ancak bilgiler sizin başlattığınız veya etkin servislerin gerektirdiği sınırlı senaryolarda paylaşılabilir.",
+        tag_rights: "Tercihleriniz ve Haklarınız",
+        title_rights: "Bilgilerinizi nasıl yönetebilirsiniz",
+        text_rights: "İçeriğinizi genellikle doğrudan cihazınızdan ve uygulama ayarlarından kontrol edebilirsiniz. Bulunduğunuz yargı alanına bağlı olarak ayrıca yasal gizlilik haklarınız da olabilir.",
+        tag_children: "Çocukların Gizliliği",
+        title_children: "Yaşa ilişkin bildirim",
+        text_children: "PdfScanUp, yürürlükteki hukuk kapsamında ebeveyn onayı gerektiren yaşın altındaki çocuklara yönelik değildir. Etkin üçüncü taraf servisleri üzerinden bir çocuğun kişisel bilgi sağladığını düşünüyorsanız, durumu inceleyebilmemiz için bizimle iletişime geçin.",
+        tag_contact: "İletişim",
+        title_contact: "Bize nasıl ulaşabilirsiniz",
+        text_contact: "Bu Gizlilik Politikası veya veri işleme uygulamaları hakkında sorularınız varsa aşağıdaki e-posta adresi üzerinden geliştiriciyle iletişime geçin. Sayfayı yayınlamadan önce yer tutucu adresi değiştirin.",
+        footer_title: "Bu sayfayı herkese açık gizlilik politikası URL'niz olarak yayınlayın.",
+        footer_text: "GitHub Pages ile yayınladıktan sonra son URL'yi Google Play Console'a ekleyin ve isterseniz uygulama içi ayarlar ekranından da bağlantı verin.",
+        footer_button: "GitHub Pages'i Aç"
+      }
+    };
+
+    const buttons = document.querySelectorAll("[data-lang]");
+    const labels = document.querySelectorAll("[data-lang-label]");
+    const contentSets = document.querySelectorAll("[data-lang-content]");
+
+    function setLanguage(lang) {
+      buttons.forEach((button) => {
+        button.classList.toggle("active", button.dataset.lang === lang);
+      });
+
+      labels.forEach((node) => {
+        const key = node.dataset.langLabel;
+        if (translations[lang] && translations[lang][key]) {
+          node.textContent = translations[lang][key];
+        }
+      });
+
+      contentSets.forEach((node) => {
+        const parts = node.dataset.langContent.split(" ");
+        const nodeLang = parts[0];
+        node.classList.toggle("active", nodeLang === lang);
+      });
+
+      document.documentElement.lang = lang;
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => setLanguage(button.dataset.lang));
+    });
+
+    setLanguage("en");
+  </script>
+</body>
+</html>
